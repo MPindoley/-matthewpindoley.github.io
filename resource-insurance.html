@@ -556,9 +556,9 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 
 <!-- ─── NAV ─────────────────────────────────────────── -->
 <nav id="nav">
-  <a href="index_new.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
+  <a href="index.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
   <ul class="nav-links">
-    <li><a href="index_new.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li class="nav-drop">
       <button class="nav-drop-trigger active" aria-haspopup="true" aria-expanded="false">
         Resources
@@ -594,7 +594,7 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 <!-- MOBILE DRAWER -->
 <div id="mob">
   <button id="mob-x">✕</button>
-  <a href="index_new.html" class="mob-a">Home</a>
+  <a href="index.html" class="mob-a">Home</a>
   <div class="mob-resources">
     <div class="mob-res-label">Resources</div>
     <div class="mob-res-links">
@@ -1123,10 +1123,10 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
     </div>
     <div class="ft-lks">
       <div class="ft-col"><h4>Services</h4><ul>
-        <li><a href="service.html">Wealth Management</a></li>
-        <li><a href="service.html">Retirement Planning</a></li>
-        <li><a href="service.html">Tax Strategy</a></li>
-        <li><a href="service.html">Estate Planning</a></li>
+        <li><a href="index.html#services">Wealth Management</a></li>
+        <li><a href="index.html#services">Retirement Planning</a></li>
+        <li><a href="index.html#services">Tax Strategy</a></li>
+        <li><a href="index.html#services">Estate Planning</a></li>
       </ul></div>
       <div class="ft-col"><h4>Resources</h4><ul>
         <li><a href="resource-retirement.html">Retirement</a></li>
@@ -1137,8 +1137,8 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
         <li><a href="resource-money.html">Money &amp; Lifestyle</a></li>
       </ul></div>
       <div class="ft-col"><h4>Firm</h4><ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="about-firm.html">Our Firm</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#about">Our Firm</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul></div>
     </div>
@@ -1308,43 +1308,6 @@ function runDisability(){
       Target coverage (65% of income): <strong style="color:var(--ink)">${fmt(targetCoverage)}/mo</strong>${expenseGap!==null&&expenseGap>0?` · Monthly expense shortfall: <strong style="color:var(--ink)">${fmt(expenseGap)}</strong>`:''}.<br><br>
       ${gap>0?`<strong>An individual disability policy could close the ${fmt(gap)}/mo gap.</strong> Note: if employer pays your premium, benefits are taxable — your effective gap may be higher.`:'Your disability coverage appears to meet the target replacement ratio.'}<br><br>
       <em style="font-size:.7rem;color:rgba(8,12,10,.32)">Industry standard targets 60–70% income replacement. Group policies exclude bonuses and are taxable if employer-paid.</em>
-    </div>
-  </div>`;
-}
-
-/* ─── UMBRELLA COVERAGE ──────────────────────────────── */
-function runUmbrella(){
-  const nw=parseFloat(document.getElementById('umb-nw').value)||0;
-  const cars=parseInt(document.getElementById('umb-cars').value)||0;
-  const risk=document.getElementById('umb-risk').value;
-  const r=document.getElementById('umb-result');
-
-  if(!nw||!risk){r.innerHTML='<div class="sb-tool-result sb-r-warn">Please enter your net worth and select a risk profile.</div>';return;}
-
-  // Base: round up net worth to nearest million, min $1M
-  let base=Math.max(1000000,Math.ceil(nw/1000000)*1000000);
-  // Add for cars
-  if(cars>=3) base+=1000000;
-  // Adjust for risk
-  if(risk==='moderate') base=Math.max(base,2000000);
-  if(risk==='high') base=Math.max(base,3000000);
-
-  const fmt=n=>'$'+n.toLocaleString('en-US');
-  const fmtEst=n=>'$'+Math.round(n).toLocaleString('en-US');
-
-  // Annual cost estimate: roughly $150–300 per million
-  const lowCost=base/1000000*150;
-  const highCost=base/1000000*300;
-
-  r.innerHTML=`<div class="sb-tool-result sb-r-ok">
-    <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);font-weight:600;margin-bottom:.75rem">Umbrella Coverage Recommendation</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem">
-      <div><div style="font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(8,12,10,.38);font-weight:600;margin-bottom:.2rem">Suggested Coverage</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink)">${fmt(base)}</div></div>
-      <div><div style="font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(8,12,10,.38);font-weight:600;margin-bottom:.2rem">Estimated Annual Cost</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink)">${fmtEst(lowCost)}–${fmtEst(highCost)}</div></div>
-    </div>
-    <div style="font-size:.75rem;color:rgba(8,12,10,.44);line-height:1.62">
-      Based on a net worth of <strong style="color:var(--ink)">${fmt(nw)}</strong> and a <strong style="color:var(--ink)">${risk}</strong> risk profile. Umbrella policies layer on top of your existing home and auto liability limits — ensure those are set to at least $250,000/$500,000 before adding an umbrella.<br><br>
-      <em style="font-size:.7rem;color:rgba(8,12,10,.32)">Cost estimates are illustrative. Actual premiums vary by insurer, state, and underlying policy limits. Quotes should be obtained from 2–3 carriers.</em>
     </div>
   </div>`;
 }

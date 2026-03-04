@@ -655,9 +655,9 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 
 <!-- ─── NAV ───────────────────────────────────────── -->
 <nav id="nav">
-  <a href="index_new.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
+  <a href="index.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
   <ul class="nav-links">
-    <li><a href="index_new.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li class="nav-drop">
       <button class="nav-drop-trigger active" aria-haspopup="true" aria-expanded="false">
         Resources
@@ -693,7 +693,7 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 <!-- MOBILE DRAWER -->
 <div id="mob">
   <button id="mob-x">✕</button>
-  <a href="index_new.html">Home</a>
+  <a href="index.html">Home</a>
   <div class="mob-resources">
     <div class="mob-res-label">Resources</div>
     <div class="mob-res-links">
@@ -1207,7 +1207,7 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
   <p class="cta-p rv d1">This is the conversation most advisors skip. We don't. <strong>Your life is the plan</strong> — everything else is just the mechanism to fund it. Let's talk about what that looks like for you.</p>
   <div class="cta-acts rv d2">
     <a href="contact.html" class="btn-cta-primary">Schedule a Conversation</a>
-    <a href="resources.html" class="btn-cta-ghost">Browse All Resources</a>
+    <a href="index.html#resources" class="btn-cta-ghost">Browse All Resources</a>
   </div>
   <div class="cta-details rv d3">
     <div class="cta-det-item">
@@ -1247,9 +1247,9 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
       <div class="ft-col">
         <h4>Firm</h4>
         <ul>
-          <li><a href="about-firm.html">About the Firm</a></li>
-          <li><a href="about-who.html">Who We Serve</a></li>
-          <li><a href="service.html">Services</a></li>
+          <li><a href="index.html#about">About the Firm</a></li>
+          <li><a href="index.html#about">Who We Serve</a></li>
+          <li><a href="index.html#services">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -1376,30 +1376,6 @@ function runEmergencyFund(){
       <div><div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--im);font-weight:600;margin-bottom:.2rem">Absolute Minimum</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--ink)">${fmt(low)}</div></div>
     </div>
     <div style="font-size:.75rem;color:var(--im);line-height:1.65">Based on <strong style="color:var(--ink)">${fmt(monthly)}/month</strong> in essential expenses, your target emergency fund is <strong style="color:var(--ink)">${fmt(target)}</strong>. Keep this in a high-yield savings account or money market — liquid, safe, and separate from investment accounts.<br><br><em style="font-size:.7rem;color:rgba(12,11,9,.3)">Essentials include: housing, utilities, groceries, insurance, and minimum debt payments only.</em></div>
-  </div>`;
-}
-
-/* ─── TOOL: SAVINGS RATE ─────────────────────────── */
-function runSavingsRate(){
-  const income=parseFloat(document.getElementById('sr-income').value)||0;
-  const savings=parseFloat(document.getElementById('sr-savings').value)||0;
-  const r=document.getElementById('sr-result');
-  if(!income||!savings){r.innerHTML='<div class="sb-tool-result sb-r-warn">Please fill in all fields.</div>';return;}
-  const rate=(savings/income*100).toFixed(1);
-  const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
-  let grade,color,note;
-  if(rate>=30){grade='Exceptional';color='#2a6b2e';note='You are on pace for financial independence well ahead of a traditional retirement timeline.'}
-  else if(rate>=20){grade='Strong';color='#2a6b2e';note='Solid foundation. Small increases can meaningfully accelerate your independence date.'}
-  else if(rate>=12){grade='Moderate';color='#9a7c52';note='On par with most high earners — but there\'s meaningful room to improve by reviewing discretionary spending.'}
-  else{grade='Needs Attention';color='#a0271e';note='Your savings rate is below benchmarks for your income level. A structured spending review is recommended.'}
-  const to25=(income*.25-savings);
-  r.innerHTML=`<div class="sb-tool-result ${rate>=20?'sb-r-ok':rate>=12?'sb-r-info':'sb-r-warn'}">
-    <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);font-weight:600;margin-bottom:.75rem">Savings Rate Analysis</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.75rem">
-      <div><div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--im);font-weight:600;margin-bottom:.2rem">Your Rate</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:${color}">${rate}%</div></div>
-      <div><div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--im);font-weight:600;margin-bottom:.2rem">Rating</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:${color}">${grade}</div></div>
-    </div>
-    <div style="font-size:.75rem;color:var(--im);line-height:1.65">${note}${to25>0?`<br><br>To reach <strong style="color:var(--ink)">25% savings rate</strong>, you'd need to save an additional <strong style="color:var(--ink)">${fmt(to25)}/yr</strong> (${fmt(to25/12)}/mo).`:''}<br><br><em style="font-size:.7rem;color:rgba(12,11,9,.3)">Uses gross income as denominator. Includes all savings: 401(k), IRA, taxable, HSA, and other investment accounts.</em></div>
   </div>`;
 }
 </script>

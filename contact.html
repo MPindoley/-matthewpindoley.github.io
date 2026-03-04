@@ -387,10 +387,10 @@ footer{position:relative;z-index:1;
 
 <!-- ═══ NAV ═══════════════════════════════════════ -->
 <nav id="nav">
-  <a href="index_new.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
+  <a href="index.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
 
   <ul class="nav-center">
-    <li><a href="index_new.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
 
@@ -402,7 +402,7 @@ footer{position:relative;z-index:1;
 <!-- MOBILE DRAWER -->
 <div id="mob">
   <button id="mob-x">✕</button>
-  <a href="index_new.html" class="mob-link">Home</a>
+  <a href="index.html" class="mob-link">Home</a>
   <a href="contact.html" class="mob-link">Contact</a>
 </div>
 
@@ -440,7 +440,7 @@ footer{position:relative;z-index:1;
         </div>
         <div class="thread">
           <div class="thread-label">Email</div>
-          <a href="mailto:mpindoley@yourfirm.com" class="thread-value">mpindoley@<br>yourfirm.com
+          <a href="/cdn-cgi/l/email-protection#0d607d646369626168744d7462787f6b647f60236e6260" class="thread-value">mpindoley@<br>yourfirm.com
             <div class="thread-sub">Response within hours</div>
           </a>
         </div>
@@ -576,10 +576,10 @@ footer{position:relative;z-index:1;
 <footer>
   <div class="ft-logo-sm">Matthew Pindoley &nbsp;<b>SE-AWMA®</b></div>
   <div class="ft-links-sm">
-    <a href="index_new.html">Home</a>
-    <a href="resources.html">Resources</a>
-    <a href="service.html">Services</a>
-    <a href="about-firm.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
   </div>
   <p class="ft-disc-sm">Investment advisory services. Not a guarantee of future results. © 2025 Matthew Pindoley Financial Advisory.</p>
 </footer>
@@ -649,43 +649,6 @@ const ro=new IntersectionObserver(entries=>{
       setTimeout(()=>e.target.classList.add('vis'),i*100);
       ro.unobserve(e.target);
     }
-  });
-},{threshold:.15});
-trustItems.forEach(el=>ro.observe(el));
-
-/* FORM */
-document.getElementById('contact-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  const first=document.getElementById('f-first').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  const topic=document.getElementById('f-topic').value;
-  if(!first){pulse('f-first');return}
-  if(!email||!email.includes('@')){pulse('f-email');return}
-  if(!topic){pulse('f-topic');return}
-  const fw=document.getElementById('form-wrap');
-  fw.style.transition='opacity .5s ease,transform .5s ease';
-  fw.style.opacity='0';fw.style.transform='translateY(-10px)';
-  setTimeout(()=>{
-    fw.style.display='none';
-    const s=document.getElementById('success');
-    s.style.display='block';
-    requestAnimationFrame(()=>requestAnimationFrame(()=>s.classList.add('visible')));
-  },520);
-});
-
-function pulse(id){
-  const el=document.getElementById(id);
-  el.style.borderBottomColor='rgba(200,70,50,.45)';
-  let t=0;const sh=[5,-5,4,-3,2,-1,0];
-  const go=()=>{
-    if(t>=sh.length){el.style.transform='';return}
-    el.style.transform=`translateX(${sh[t++]}px)`;
-    setTimeout(go,52);
-  };
-  go();
-  setTimeout(()=>el.style.borderBottomColor='',1400);
-  el.focus();
-}
 </script>
 </body>
 </html>

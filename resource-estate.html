@@ -493,9 +493,9 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 
 <!-- ─── NAV ──────────────────────────────────────── -->
 <nav id="nav">
-  <a href="index_new.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
+  <a href="index.html" class="nav-logo">Matthew Pindoley<br><b>SE-AWMA®</b></a>
   <ul class="nav-links">
-    <li><a href="index_new.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li class="nav-drop">
       <button class="nav-drop-trigger active" aria-haspopup="true" aria-expanded="false">
         Resources
@@ -531,7 +531,7 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 <!-- MOBILE DRAWER -->
 <div id="mob">
   <button id="mob-x">✕</button>
-  <a href="index_new.html" class="mob-a">Home</a>
+  <a href="index.html" class="mob-a">Home</a>
   <div class="mob-resources">
     <div class="mob-res-label">Resources</div>
     <div class="mob-res-links">
@@ -947,10 +947,10 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
     </div>
     <div class="ft-lks">
       <div class="ft-col"><h4>Services</h4><ul>
-        <li><a href="service.html">Wealth Management</a></li>
-        <li><a href="service.html">Retirement Planning</a></li>
-        <li><a href="service.html">Tax Strategy</a></li>
-        <li><a href="service.html">Estate Planning</a></li>
+        <li><a href="index.html#services">Wealth Management</a></li>
+        <li><a href="index.html#services">Retirement Planning</a></li>
+        <li><a href="index.html#services">Tax Strategy</a></li>
+        <li><a href="index.html#services">Estate Planning</a></li>
       </ul></div>
       <div class="ft-col"><h4>Resources</h4><ul>
         <li><a href="resource-retirement.html">Retirement</a></li>
@@ -961,8 +961,8 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
         <li><a href="resource-money.html">Money &amp; Lifestyle</a></li>
       </ul></div>
       <div class="ft-col"><h4>Firm</h4><ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="about-firm.html">Our Firm</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#about">Our Firm</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul></div>
     </div>
@@ -1102,27 +1102,6 @@ function runBenAudit(){
     r.innerHTML='<div class="sb-tool-result sb-r-ok">✓ No gaps detected. All key designations are filled. Verify these designations directly with each custodian and review with estate counsel annually.</div>';
   } else {
     r.innerHTML='<div class="sb-tool-result sb-r-warn"><strong>'+issues.length+' item'+(issues.length>1?'s':'')+' to address:</strong><ul style="margin:.5rem 0 0 1rem;display:flex;flex-direction:column;gap:.3rem">'+issues.map(i=>'<li style="font-size:.78rem">'+i+'</li>').join('')+'</ul></div>';
-  }
-}
-
-/* ─── LIQUIDITY PLANNER ───────────────────────────── */
-function runLiquidity(){
-  const estate=parseFloat(document.getElementById('liq-estate').value)||0;
-  const liquid=parseFloat(document.getElementById('liq-liquid').value)||0;
-  const ins=parseFloat(document.getElementById('liq-ins').value)||0;
-  const exemption=13610000;
-  const taxable=Math.max(0,estate-exemption);
-  const estTax=taxable*0.4;
-  const available=liquid+ins;
-  const gap=estTax-available;
-  const fmt=n=>Math.round(n).toLocaleString('en-US');
-  const r=document.getElementById('liq-result');
-  if(estTax===0){
-    r.innerHTML='<div class="sb-tool-result sb-r-ok">Estate is below the 2024 federal exemption. No federal estate tax projected at current exemption levels.<br><br><strong style="font-size:.75rem">Note:</strong> <span style="font-size:.75rem">The exemption may drop to ~$7M after 2025. Review exposure under the post-sunset scenario.</span></div>';
-  } else if(gap<=0){
-    r.innerHTML='<div class="sb-tool-result sb-r-ok">Liquidity appears sufficient.<br><br><span style="font-size:.78rem;opacity:.8">Est. tax: <strong>$'+fmt(estTax)+'</strong> · Available: <strong>$'+fmt(available)+'</strong> · Surplus: <strong>$'+fmt(-gap)+'</strong></span></div>';
-  } else {
-    r.innerHTML='<div class="sb-tool-result sb-r-warn">Liquidity shortfall detected.<br><br><span style="font-size:.78rem;opacity:.8">Est. tax: <strong>$'+fmt(estTax)+'</strong> · Available: <strong>$'+fmt(available)+'</strong> · Shortfall: <strong>$'+fmt(gap)+'</strong></span><br><br><span style="font-size:.75rem">Consider additional liquidity strategies: ILIT (life insurance in irrevocable trust), installment elections (IRC §6166), or asset reallocation. Discuss with estate counsel.</span></div>';
   }
 }
 </script>
