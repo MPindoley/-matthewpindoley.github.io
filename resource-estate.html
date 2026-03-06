@@ -481,7 +481,21 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 }
 @media(max-width:768px){
   .nav-links,.nav-btn{display:none}.hbg{display:flex}
+  #hero,#pillars,#docs,#sunset,#faq,#cta,footer{padding-left:1.5rem;padding-right:1.5rem}
+  .hero-h{font-size:clamp(3rem,13vw,6.5rem)}
+  .hero-actions{flex-wrap:wrap;gap:.75rem}
+  .hero-actions .btn-p{width:100%;justify-content:center}
   .pil-row{grid-template-columns:2.5rem 1fr}
+  .hero-meta{gap:2rem;flex-wrap:wrap}
+  #sunset{grid-template-columns:1fr;gap:1.5rem}
+  .sun-cta{display:none}
+  #stats{padding:0 1.5rem}
+  footer{padding:3rem 1.5rem 2rem}
+}
+@media(max-width:480px){
+  #nav,#nav.stk{padding-left:1.25rem;padding-right:1.25rem}
+  #hero,#pillars,#docs,#sunset,#faq,#cta,footer{padding-left:1.25rem;padding-right:1.25rem}
+  footer{padding:2.5rem 1.25rem 1.5rem}
 }
 @media(hover:none){#cur,#cur-r{display:none}body{cursor:auto}a,button{cursor:pointer}}
 

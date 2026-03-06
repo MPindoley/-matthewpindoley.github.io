@@ -456,11 +456,35 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 }
 @media(max-width:768px){
   .nav-links,.nav-btn{display:none}.hbg{display:flex}
-  .hl{padding:12rem 2.5rem 5rem}
+  .hl{padding:10rem 1.5rem 4rem}
+  .h-ttl{font-size:clamp(3.5rem,13vw,8rem)}
+  .h-meta{gap:2rem;flex-wrap:wrap}
+  #band{padding:4rem 1.5rem}
+  .band-lbl{white-space:normal}
+  .t-content{padding:3rem 1.5rem}
+  #calc{padding:5rem 1.5rem}
+  .c-in,.c-out{padding:2.5rem 1.5rem}
+  #tl{padding:5rem 1.5rem}
   .tl-grid{grid-template-columns:1fr}
   .tl-ph{border-right:none;border-bottom:1px solid var(--ib)}
+  #acc{padding:5rem 1.5rem}
+  #faq{padding:5rem 1.5rem}
+  #cta{padding:0}.cta-l{padding:5rem 1.5rem}
+  footer{padding:3rem 1.5rem 2rem}
   .ft-top{flex-direction:column}.ft-lks{flex-direction:column;gap:2rem}
   .ft-bot{flex-direction:column;align-items:flex-start}.ft-di{text-align:left}
+}
+@media(max-width:480px){
+  #nav,#nav.lt,#nav.dk{padding-left:1.25rem;padding-right:1.25rem}
+  .hl{padding:9rem 1.25rem 3.5rem}
+  .h-ttl{font-size:clamp(3rem,15vw,6rem)}
+  #band{padding:3.5rem 1.25rem}
+  .t-content{padding:2.5rem 1.25rem}
+  #calc{padding:4rem 1.25rem}
+  .c-in,.c-out{padding:2rem 1.25rem}
+  #tl,#acc,#faq{padding:4rem 1.25rem}
+  .cta-l{padding:4rem 1.25rem}
+  footer{padding:2.5rem 1.25rem 1.5rem}
 }
 @media(hover:none){#cur,#cur-r{display:none}body{cursor:auto}a,button{cursor:pointer}}
 

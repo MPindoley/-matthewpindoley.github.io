@@ -479,20 +479,58 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 4.
 }
 @media(max-width:768px){
   .nav-links,.nav-btn{display:none}.hbg{display:flex}
-  .h1{font-size:clamp(3.5rem,14vw,6.5rem)}
-  #hero{padding-bottom:9rem}
-  .h-bot{flex-direction:column;align-items:flex-start;margin-bottom:2rem}
+  .h1{font-size:clamp(3rem,13vw,6.5rem)}
+  #hero{padding-bottom:9rem;padding-left:1.5rem;padding-right:1.5rem}
+  .h-bot{flex-direction:column;align-items:flex-start;margin-bottom:2rem;gap:1.5rem}
+  .h-ctas{flex-direction:column;align-items:flex-start;gap:.8rem;width:100%}
+  .h-ctas .btn{width:100%;justify-content:center}
+  .h-desc{max-width:100%;font-size:.88rem}
   .pr-hd,.rs-hd{grid-template-columns:1fr}
   .pr-grid,.rs-grid{grid-template-columns:1fr}
-  .sv-panel-inner{grid-template-columns:1fr;padding-left:2.5rem}
+  /* Service accordion — collapse to 3-col grid, hide tag to prevent overflow */
+  .sv-row-head{grid-template-columns:2.5rem 1fr auto;gap:1rem;padding:1.6rem 0}
+  .sv-tag{display:none}
+  .sv-nm{font-size:clamp(1.5rem,6vw,2.4rem)}
+  .sv-panel-inner{grid-template-columns:1fr;padding-left:1.5rem;gap:2rem}
+  /* Stats compact on mobile */
+  #stats{padding:5rem 1.5rem}
+  .stat{padding:3rem 2rem}
+  /* About section */
+  #about{padding:6rem 1.5rem}
+  /* Services section */
+  #services{padding:6rem 1.5rem}
+  /* Process section */
+  #process{padding:6rem 1.5rem}
+  .pr-grid{gap:2px}
+  .pr-step{padding:2.5rem 1.8rem}
+  /* Resources section */
+  #resources{padding:6rem 1.5rem}
+  /* Contact section */
+  #contact{padding:8rem 1.5rem}
+  .ct-h{font-size:clamp(3.2rem,12vw,5rem)}
+  .ct-p{font-size:.85rem;max-width:100%}
+  .ct-dets{flex-direction:column;gap:2rem;align-items:flex-start;margin-top:3rem}
+  /* Footer */
   .ft-top{flex-direction:column}.ft-lks{flex-direction:column;gap:2rem}
   .ft-bot{flex-direction:column;align-items:flex-start}.ft-di{text-align:left}
-  .ct-dets{flex-direction:column;gap:2rem;align-items:flex-start}
+  footer{padding:4rem 1.5rem 2.5rem}
+}
+@media(max-width:480px){
+  #nav,#nav.stk{padding-left:1.25rem;padding-right:1.25rem}
+  .h-tag{font-size:.58rem;letter-spacing:.18em}
+  .h-scroll{display:none}
+  #stats{padding:4rem 1.25rem}
+  .stat{padding:2.5rem 1.5rem}
+  .stat-n{font-size:clamp(2.8rem,12vw,5rem)}
+  #about,#services,#process,#resources{padding:5rem 1.25rem}
+  #contact{padding:6rem 1.25rem}
+  footer{padding:3.5rem 1.25rem 2rem}
 }
 @media(hover:none){
   #cur,#cur-r,#cur-lbl{display:none}
   body{cursor:auto}
   .sv-row,.rs-card{cursor:pointer}
+  .btn{cursor:pointer}
 }
 </style>
 </head>
