@@ -415,26 +415,6 @@ body.pressing #cur{width:22px;height:22px}
 .rv.vis{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
-/* ── FOOTER ── */
-footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5rem 3.5rem}
-.ft-top{display:flex;justify-content:space-between;align-items:flex-start;
-  gap:3rem;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border)}
-.ft-logo{font-family:var(--ff);font-size:1.5rem;font-weight:300;color:var(--paper)}
-.ft-logo b{color:var(--gold);font-weight:400;font-style:italic}
-.ft-tg{font-size:.78rem;color:rgba(242,236,224,.45);margin-top:.55rem;max-width:28ch;line-height:1.6}
-.ft-lks{display:flex;gap:5rem}
-.ft-col h4{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);font-weight:600;margin-bottom:1.4rem}
-.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.ft-col ul a{font-size:.82rem;color:rgba(242,236,224,.45);transition:color .2s}
-.ft-col ul a:hover{color:var(--paper)}
-.ft-col ul a[aria-current]{color:var(--gold)}
-.ft-bot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-.ft-cp{font-size:.7rem;color:rgba(242,236,224,.28)}
-.ft-di{font-size:.67rem;color:rgba(242,236,224,.28);max-width:60ch;text-align:right;line-height:1.6}
-.ft-di a{color:rgba(200,164,106,.45);transition:color .2s}
-.ft-di a:hover{color:var(--gold)}
-
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   #nav,#nav.stk{padding-left:2.5rem;padding-right:2.5rem}
@@ -444,7 +424,6 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
   #content{padding:0 2.5rem 8rem 2.5rem}
   .disc-inner{grid-template-columns:1fr;gap:2.5rem;padding:4.5rem 0}
   .sec-ghost{display:none}
-  footer{padding:4rem 2.5rem 3rem}
 }
 @media(max-width:768px){
   .nav-links,.nav-btn{display:none}
@@ -452,11 +431,66 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
   #hero{padding:12rem 1.6rem 5rem}
   #content{padding:0 1.6rem 6rem}
   .band{padding:2rem 1.6rem;gap:2.5rem;flex-wrap:wrap}
-  .ft-top{flex-direction:column}.ft-lks{gap:2.5rem}
-  .ft-bot{flex-direction:column;align-items:flex-start}.ft-di{text-align:left}
-  footer{padding:3.5rem 1.6rem 2.5rem}
 }
 @media(hover:none){#cur,#cur-r{display:none}body{cursor:auto}a,button{cursor:pointer}}
+
+/* ── FOOTER ── */
+footer{
+  background:#111318;
+  border-top:1px solid rgba(200,164,106,.18);
+  padding:5rem 5rem 3.5rem;
+}
+.ft-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:3rem;margin-bottom:4rem;padding-bottom:4rem;
+  border-bottom:1px solid rgba(200,164,106,.12);
+}
+.ft-logo{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.5rem;font-weight:300;color:#f2ece0;
+}
+.ft-logo b{color:#c8a46a;font-weight:400;font-style:italic}
+.ft-tg{
+  font-size:.78rem;color:rgba(242,236,224,.45);
+  margin-top:.55rem;max-width:28ch;line-height:1.6;
+}
+.ft-lks{display:flex;gap:5rem;flex-wrap:wrap}
+.ft-col h4{
+  font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:#c8a46a;font-weight:600;margin-bottom:1.4rem;
+}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.ft-col ul a{font-size:.82rem;color:rgba(242,236,224,.48);transition:color .2s}
+.ft-col ul a:hover{color:#f2ece0}
+.ft-col ul a[aria-current]{color:#c8a46a}
+.ft-bot{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:1.5rem;flex-wrap:wrap;
+}
+.ft-cp{font-size:.7rem;color:rgba(242,236,224,.32);white-space:nowrap;padding-top:.15rem}
+.ft-di{
+  font-size:.67rem;color:rgba(242,236,224,.38);
+  max-width:62ch;text-align:right;line-height:1.7;
+}
+.ft-di strong{color:rgba(242,236,224,.58);font-weight:500}
+.ft-di a{color:rgba(200,164,106,.65);transition:color .2s;text-decoration:none}
+.ft-di a:hover{color:#c8a46a}
+/* ── FOOTER RESPONSIVE ── */
+@media(max-width:1100px){
+  footer{padding:4rem 2.5rem 3rem}
+}
+@media(max-width:768px){
+  footer{padding:3.5rem 1.6rem 2.8rem}
+  .ft-top{flex-direction:column;gap:2.5rem;margin-bottom:3rem;padding-bottom:3rem}
+  .ft-lks{gap:2.5rem}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:1rem}
+  .ft-di{text-align:left;max-width:100%}
+}
+@media(max-width:480px){
+  .ft-lks{flex-direction:column;gap:2rem}
+  .ft-logo{font-size:1.25rem}
+  .ft-di{font-size:.64rem}
+}
 </style>
 </head>
 <body>
@@ -865,7 +899,7 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 <footer>
   <div class="ft-top">
     <div>
-      <div class="ft-logo">Matthew Pindoley — <b>SE-AWMA®</b></div>
+      <div class="ft-logo">Matthew Pindoley &mdash; <b>SE-AWMA&reg;</b></div>
       <div class="ft-tg">From the first steps of success to the creation of generational wealth.</div>
     </div>
     <div class="ft-lks">
@@ -894,15 +928,15 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
     </div>
   </div>
   <div class="ft-bot">
-    <div class="ft-cp">© 2026 Matthew Pindoley Financial Advisory. All rights reserved.</div>
+    <div class="ft-cp">&copy; 2026 Matthew Pindoley Financial Advisory. All rights reserved.</div>
     <div class="ft-di">
       Securities and investment advisory services offered through <strong>Osaic Wealth, Inc.</strong>, Member
-      <a href="https://www.finra.org" target="_blank" rel="noopener noreferrer">FINRA</a> /
-      <a href="https://www.sipc.org" target="_blank" rel="noopener noreferrer">SIPC</a>.
-      <strong>Osaic Wealth, Inc.</strong> is separately owned; Matthew Pindoley, Glass City Federal Credit Union, and Glass City Federal Financial Solutions are not affiliated with <strong>Osaic Wealth, Inc.</strong>
-      &nbsp;|&nbsp;
-      <a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">Check background on FINRA BrokerCheck.</a>
-      &nbsp;|&nbsp;
+      <a href="https://www.finra.org" target="_blank" rel="noopener noreferrer">FINRA</a>&thinsp;/&thinsp;<a href="https://www.sipc.org" target="_blank" rel="noopener noreferrer">SIPC</a>.
+      <strong>Osaic Wealth, Inc.</strong> is separately owned; Matthew Pindoley, Glass City Federal Credit Union,
+      and Glass City Federal Financial Solutions are not affiliated with <strong>Osaic Wealth, Inc.</strong>
+      &nbsp;&bull;&nbsp;
+      <a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">FINRA BrokerCheck</a>
+      &nbsp;&bull;&nbsp;
       <a href="https://www.osaic.com/FormCRS" target="_blank" rel="noopener noreferrer">Osaic Form CRS</a>
     </div>
   </div>

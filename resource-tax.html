@@ -451,23 +451,6 @@ body.pressing #cur{width:20px;height:20px}
 .cta-dv{font-family:var(--ff);font-size:1.35rem;font-weight:300;color:var(--cream)}
 .cta-dv a{transition:color .2s}.cta-dv a:hover{color:var(--bronze2)}
 
-/* FOOTER */
-footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5rem 3.5rem}
-.ft-top{display:flex;justify-content:space-between;align-items:flex-start;
-  gap:3rem;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border)}
-.ft-logo{font-family:var(--ff);font-size:1.5rem;font-weight:300;color:var(--cream)}
-.ft-logo b{color:var(--bronze2);font-weight:400;font-style:italic}
-.ft-tg{font-size:.78rem;color:rgba(250,248,244,.52);margin-top:.5rem;max-width:28ch;line-height:1.6}
-.ft-lks{display:flex;gap:5rem}
-.ft-col h4{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--bronze);font-weight:600;margin-bottom:1.4rem}
-.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.ft-col ul a{font-size:.82rem;color:rgba(250,248,244,.52);transition:color .2s}
-.ft-col ul a:hover{color:var(--cream)}
-.ft-bot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-.ft-cp{font-size:.7rem;color:rgba(250,248,244,.38)}
-.ft-di{font-size:.66rem;color:rgba(250,248,244,.35);max-width:55ch;text-align:right;line-height:1.55}
-
 /* ─── SIDEBAR ─────────────────────────────────────── */
 #sb-trigger{position:fixed;right:2rem;top:50%;transform:translateY(-50%);
   z-index:600;display:flex;flex-direction:column;align-items:center;gap:0;
@@ -610,9 +593,6 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
   #timeline .tl-head{padding:0 2.5rem}
   .tl-scroll-outer{padding:0 2.5rem}
   #sb-trigger{display:none}
-  .ft-top{flex-direction:column}.ft-lks{flex-direction:column;gap:2rem}
-  .ft-bot{flex-direction:column;align-items:flex-start}.ft-di{text-align:left}
-  footer{padding:4rem 2.5rem 2.5rem}
   .cta-details{gap:2.5rem}
 }
 @media(max-width:768px){
@@ -629,7 +609,6 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
   #faq{padding:4rem 1.5rem}
   #cta{padding:5rem 1.5rem}
   .cta-details{flex-direction:column;gap:1.5rem}
-  footer{padding:3rem 1.5rem 2rem}
 }
 @media(max-width:480px){
   #nav,#nav.stk{padding-left:1.25rem;padding-right:1.25rem}
@@ -637,7 +616,6 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
   .hero-h{font-size:clamp(4.5rem,22vw,8rem)}
   .strat-intro-left,.strat-intro-right,.strat-cell,.feat-left,.feat-right{padding-left:1.25rem;padding-right:1.25rem}
   #faq,#cta{padding-left:1.25rem;padding-right:1.25rem}
-  footer{padding:2.5rem 1.25rem 1.5rem}
 }
 @media(pointer:coarse){#cur,#cur-r{display:none}body{cursor:auto}a,button{cursor:pointer}}
 
@@ -645,6 +623,64 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 .t-discuss span{transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .t-discuss:hover{color:var(--gold)}
 .t-discuss:hover span{transform:translateX(4px)}
+
+/* ── FOOTER ── */
+footer{
+  background:#141210;
+  border-top:1px solid rgba(184,150,106,.20);
+  padding:5rem 5rem 3.5rem;
+}
+.ft-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:3rem;margin-bottom:4rem;padding-bottom:4rem;
+  border-bottom:1px solid rgba(184,150,106,.13);
+}
+.ft-logo{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.5rem;font-weight:300;color:#faf8f4;
+}
+.ft-logo b{color:#b8966a;font-weight:400;font-style:italic}
+.ft-tg{
+  font-size:.78rem;color:rgba(250,248,244,.44);
+  margin-top:.55rem;max-width:28ch;line-height:1.6;
+}
+.ft-lks{display:flex;gap:5rem;flex-wrap:wrap}
+.ft-col h4{
+  font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:#b8966a;font-weight:600;margin-bottom:1.4rem;
+}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.ft-col ul a{font-size:.82rem;color:rgba(250,248,244,.46);transition:color .2s}
+.ft-col ul a:hover{color:#faf8f4}
+.ft-col ul a[aria-current]{color:#b8966a}
+.ft-bot{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:1.5rem;flex-wrap:wrap;
+}
+.ft-cp{font-size:.7rem;color:rgba(250,248,244,.30);white-space:nowrap;padding-top:.15rem}
+.ft-di{
+  font-size:.67rem;color:rgba(250,248,244,.38);
+  max-width:62ch;text-align:right;line-height:1.7;
+}
+.ft-di strong{color:rgba(250,248,244,.56);font-weight:500}
+.ft-di a{color:rgba(184,150,106,.72);transition:color .2s;text-decoration:none}
+.ft-di a:hover{color:#c8a46a}
+/* ── FOOTER RESPONSIVE ── */
+@media(max-width:1100px){
+  footer{padding:4rem 2.5rem 3rem}
+}
+@media(max-width:768px){
+  footer{padding:3.5rem 1.6rem 2.8rem}
+  .ft-top{flex-direction:column;gap:2.5rem;margin-bottom:3rem;padding-bottom:3rem}
+  .ft-lks{gap:2.5rem}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:1rem}
+  .ft-di{text-align:left;max-width:100%}
+}
+@media(max-width:480px){
+  .ft-lks{flex-direction:column;gap:2rem}
+  .ft-logo{font-size:1.25rem}
+  .ft-di{font-size:.64rem}
+}
 </style>
 </head>
 <body>
@@ -1136,34 +1172,46 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:5rem 5r
 <footer>
   <div class="ft-top">
     <div>
-      <div class="ft-logo">Matthew Pindoley <b>SE-AWMA®</b></div>
-      <p class="ft-tg">Sophisticated wealth management for those who've earned the right to expect more.</p>
+      <div class="ft-logo">Matthew Pindoley &mdash; <b>SE-AWMA&reg;</b></div>
+      <div class="ft-tg">From the first steps of success to the creation of generational wealth.</div>
     </div>
     <div class="ft-lks">
-      <div class="ft-col"><h4>Services</h4><ul>
-        <li><a href="index.html#services">Wealth Management</a></li>
-        <li><a href="index.html#services">Retirement Planning</a></li>
-        <li><a href="index.html#services">Tax Strategy</a></li>
-        <li><a href="index.html#services">Estate Planning</a></li>
-      </ul></div>
-      <div class="ft-col"><h4>Resources</h4><ul>
-        <li><a href="resource-retirement.html">Retirement</a></li>
-        <li><a href="resource-investment.html">Investment</a></li>
-        <li><a href="resource-estate.html">Estate</a></li>
-        <li><a href="resource-tax.html">Tax Planning</a></li>
-        <li><a href="resource-insurance.html">Insurance</a></li>
-        <li><a href="resource-money.html">Money &amp; Lifestyle</a></li>
-      </ul></div>
-      <div class="ft-col"><h4>Firm</h4><ul>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#about">Our Firm</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul></div>
+      <div class="ft-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="fee.html">Fee Schedule</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html">Disclosures</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resource-retirement.html">Retirement</a></li>
+          <li><a href="resource-estate.html">Estate</a></li>
+          <li><a href="resource-investment.html">Investment</a></li>
+          <li><a href="resource-insurance.html">Insurance</a></li>
+          <li><a href="resource-tax.html" aria-current="page">Tax Strategy</a></li>
+          <li><a href="resource-money.html">Money &amp; Lifestyle</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="ft-bot">
-    <p class="ft-cp">© 2026 Matthew Pindoley Financial Advisory. All rights reserved.</p>
-    <p class="ft-di">Investment advisory services offered through a registered investment adviser. This content is for informational purposes only and does not constitute investment, legal, or tax advice.</p>
+    <div class="ft-cp">&copy; 2026 Matthew Pindoley Financial Advisory. All rights reserved.</div>
+    <div class="ft-di">
+      Securities and investment advisory services offered through <strong>Osaic Wealth, Inc.</strong>, Member
+      <a href="https://www.finra.org" target="_blank" rel="noopener noreferrer">FINRA</a>&thinsp;/&thinsp;<a href="https://www.sipc.org" target="_blank" rel="noopener noreferrer">SIPC</a>.
+      <strong>Osaic Wealth, Inc.</strong> is separately owned; Matthew Pindoley, Glass City Federal Credit Union,
+      and Glass City Federal Financial Solutions are not affiliated with <strong>Osaic Wealth, Inc.</strong>
+      &nbsp;&bull;&nbsp;
+      <a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">FINRA BrokerCheck</a>
+      &nbsp;&bull;&nbsp;
+      <a href="https://www.osaic.com/FormCRS" target="_blank" rel="noopener noreferrer">Osaic Form CRS</a>
+    </div>
   </div>
 </footer>
 
