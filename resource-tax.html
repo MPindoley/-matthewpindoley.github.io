@@ -270,6 +270,22 @@ body.pressing #cur{width:20px;height:20px}
   display:inline-flex;align-items:center;gap:.5rem}
 .sc-tag::before{content:'';width:12px;height:1px;background:var(--bronze)}
 .sc-body{font-size:.87rem;line-height:1.86;color:rgba(12,11,9,.52);font-weight:300;max-width:40ch}
+.sc-disclosure{display:flex;align-items:flex-start;gap:.5rem;
+  margin-top:.9rem;padding:.75rem 1rem;
+  border:1px solid rgba(154,124,82,.2);border-radius:3px;
+  background:rgba(154,124,82,.05)}
+.sc-disclosure p{font-size:.65rem;line-height:1.75;color:rgba(12,11,9,.42);letter-spacing:.01em;font-style:italic}
+.strat-cell.dark .sc-disclosure{border-color:rgba(154,124,82,.25);background:rgba(154,124,82,.08)}
+.strat-cell.dark .sc-disclosure p{color:rgba(250,248,244,.38)}
+
+/* Page-level tax disclaimer bar */
+#tax-disclaimer{background:rgba(12,11,9,.04);border-top:1px solid rgba(154,124,82,.14);padding:1.6rem 5rem}
+.tax-disc-inner{display:flex;align-items:flex-start;gap:.75rem;max-width:860px;margin:0 auto}
+.tax-disc-inner p{font-size:.68rem;line-height:1.8;color:rgba(12,11,9,.38);letter-spacing:.01em}
+.tax-disc-inner p strong{color:rgba(12,11,9,.52);font-weight:600}
+@media(max-width:768px){
+  #tax-disclaimer{padding:1.4rem 1.5rem}
+}
 .sc-body strong{color:var(--ink);font-weight:500}
 /* Large cell gets bigger type */
 .strat-cell.large .sc-title{font-size:clamp(2.2rem,4vw,4.5rem)}
@@ -442,6 +458,11 @@ body.pressing #cur{width:20px;height:20px}
 .cta-p strong{color:var(--cream);font-weight:500}
 .cta-acts{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;
   margin-top:4rem;position:relative;z-index:1}
+/* Button overrides for dark CTA background */
+#cta .btn-solid{background:var(--bronze2);color:var(--ink);border:none}
+#cta .btn-solid:hover{background:var(--cream);box-shadow:0 16px 40px rgba(12,11,9,.4)}
+#cta .btn-ghost-p{color:var(--cream);border:1px solid rgba(250,248,244,.3)}
+#cta .btn-ghost-p:hover{border-color:var(--bronze2);background:rgba(154,124,82,.12);color:var(--cream)}
 .cta-details{display:flex;gap:5rem;margin-top:6rem;padding-top:4rem;
   border-top:1px solid rgba(154,124,82,.15);position:relative;z-index:1;flex-wrap:wrap;
   justify-content:center}
@@ -1067,6 +1088,10 @@ footer{
         <div class="sc-tag">Roth Strategy</div>
         <h3 class="sc-title">Roth Conversions<br>& the <em>Tax Rate Gap</em></h3>
         <p class="sc-body">Converting traditional IRA assets to Roth may make sense when your current tax rate is lower than your projected future rate.</p>
+        <div class="sc-disclosure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12" style="flex-shrink:0;margin-top:.15rem;opacity:.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          <p>A Roth conversion is a taxable event. It is recommended that you consult a tax advisor to understand how a Roth conversion specifically impacts your tax situation and to avoid underpayment penalties.</p>
+        </div>
       </div>
     </div>
     <div class="strat-cell rv d1">
@@ -1195,11 +1220,19 @@ footer{
   </div>
   <div class="cta-details rv d4">
     <div class="cta-det-item"><div class="cta-dl">Phone</div><div class="cta-dv"><a href="tel:+14198871002">(419) 887-1002</a></div></div>
-    <div class="cta-det-item"><div class="cta-dl">Email</div><div class="cta-dv"><a href="mailto:Matthew.Pindoley@osaicwealth.com">Matthew.Pindoley@osaicwealth.com</a></div></div>
+    <div class="cta-det-item"><div class="cta-dl">Email</div><div class="cta-dv"><a href="/cdn-cgi/l/email-protection#b4f9d5c0c0dcd1c39ae4dddad0dbd8d1cdf4dbc7d5ddd7c3d1d5d8c0dc9ad7dbd9"><span class="__cf_email__" data-cfemail="0a476b7e7e626f7d245a63646e65666f734a65796b63697d6f6b667e6224696567">[email&#160;protected]</span></a></div></div>
     <div class="cta-det-item"><div class="cta-dl">Consultations</div><div class="cta-dv">Complimentary</div></div>
     <div class="cta-det-item"><div class="cta-dl">Availability</div><div class="cta-dv">Mon – Fri, 9am – 5pm</div></div>
   </div>
 </section>
+
+<!-- TAX DISCLAIMER -->
+<div id="tax-disclaimer">
+  <div class="tax-disc-inner">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" style="flex-shrink:0;opacity:.55;margin-top:.1rem"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+    <p><strong>Important Disclosure:</strong> Matthew Pindoley is a financial advisor, not a Certified Public Accountant (CPA) or tax advisor. The information on this page is intended for educational purposes only and does not constitute tax advice. Tax laws are complex and subject to change. Please consult a qualified tax professional before making any tax-related decisions.</p>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -1248,7 +1281,7 @@ footer{
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ─── CURSOR ───────────────────────────────────────── */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
 let mx=0,my=0,rx=0,ry=0;
@@ -1423,9 +1456,4 @@ function runCapGains(){
   </div></div>`;
 }
 </script>
-<a href="disclosure.html" id="disc-pill" aria-label="Important Disclosures">
-  <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="5"/><path d="M6 5v4M6 3.5v.5"/></svg>
-  Disclosures
-</a>
-</body>
-</html>
+<a href
