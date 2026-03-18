@@ -1220,7 +1220,7 @@ footer{
   </div>
   <div class="cta-details rv d4">
     <div class="cta-det-item"><div class="cta-dl">Phone</div><div class="cta-dv"><a href="tel:+14198871002">(419) 887-1002</a></div></div>
-    <div><div class="cta-dl">Email</div><div class="cta-dv"><a href="/cdn-cgi/l/email-protection#df92beababb7baa8f18fb6b1bbb0b3baa69fb0acbeb6bca8babeb3abb7f1bcb0b2"><span class="__cf_email__" data-cfemail="3974584d4d515c4e176950575d56555c4079564a58505a4e5c58554d51175a5654">[email&#160;protected]</span></a></div></div>
+    <div><div class="cta-dl">Email</div><div class="cta-dv"><a href="mailto:Matthew.Pindoley@osaicwealth.com">Matthew.Pindoley@osaicwealth.com</a></div></div>
     <div class="cta-det-item"><div class="cta-dl">Consultations</div><div class="cta-dv">Complimentary</div></div>
     <div class="cta-det-item"><div class="cta-dl">Availability</div><div class="cta-dv">Mon – Fri, 9am – 5pm</div></div>
   </div>
@@ -1281,7 +1281,7 @@ footer{
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ─── CURSOR ───────────────────────────────────────── */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
 let mx=0,my=0,rx=0,ry=0;
@@ -1410,7 +1410,7 @@ function runRothConversion(){
       <div><div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--im);font-weight:600;margin-bottom:.2rem">Tax Cost Today</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--ink)">${fmt(taxNow)}</div></div>
       <div><div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--im);font-weight:600;margin-bottom:.2rem">Lifetime Benefit</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:${benefit>0?'#2a6b2e':'#a0271e'}">${benefit>0?'+':'-'}${fmt(Math.abs(benefit))}</div></div>
     </div>
-    <div style="font-size:.75rem;color:var(--im);line-height:1.65">Roth after ${years}yr: <strong style="color:var(--ink)">${fmt(rothValue)}</strong> · Traditional after tax: <strong style="color:var(--ink)">${fmt(tradValue)}</strong>.<br><br>${worthwhile?`<strong>Conversion appears beneficial</strong> — paying ${currentRate}% now avoids ${futureRate}% later.`:`Current rate (${currentRate}%) exceeds future rate (${futureRate}%) — conversion may not be optimal.`}<br><br><em style="font-size:.7rem;color:rgba(12,11,9,.3)">Assumes 7% annual growth. Does not account for state taxes, IRMAA, or bracket thresholds.</em></div>
+    <div style="font-size:.75rem;color:var(--im);line-height:1.65">Roth after ${years}yr: <strong style="color:var(--ink)">${fmt(rothValue)}</strong> &middot; Traditional after tax: <strong style="color:var(--ink)">${fmt(tradValue)}</strong>.<br><br>${worthwhile?`<strong>Conversion appears beneficial</strong> — paying ${currentRate}% now avoids ${futureRate}% later.`:`Current rate (${currentRate}%) exceeds future rate (${futureRate}%) — conversion may not be optimal.`}<br><br><em style="font-size:.7rem;color:rgba(12,11,9,.3)">Assumes 7% annual growth. Does not account for state taxes, IRMAA, or bracket thresholds.</em></div>
   </div>`;
 }
 
@@ -1451,4 +1451,14 @@ function runCapGains(){
       <div><div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--im);font-weight:600;margin-bottom:.2rem">Est. Federal Tax</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--ink)">${fmt(totalTax)}</div></div>
     </div>
     <div style="font-size:.75rem;color:var(--im);line-height:1.65">
-      ${rate*100}% ${isLT?'LTCG':'ordinary income'} + 3.8% NIIT = <strong style="color:var(--ink)">${effectiveRate}% effective rate</strong> on gain · Net proceeds after tax: <strong style="color:var(--ink)">${fmt(netProceeds)}</strong>.<br><br>${isLT?'':'<strong>Short-term gains are taxed as ordinary income.</strong> Waiting to cross the 1-year long-term t
+      ${rate*100}% ${isLT?'LTCG':'ordinary income'} + 3.8% NIIT = <strong style="color:var(--ink)">${effectiveRate}% effective rate</strong> on gain &middot; Net proceeds after tax: <strong style="color:var(--ink)">${fmt(netProceeds)}</strong>.<br><br>${isLT?'':'<strong>Short-term gains are taxed as ordinary income.</strong> Waiting to cross the 1-year long-term threshold can significantly reduce your tax liability. Consider tax-loss harvesting or deferring the sale if you are close to the 1-year mark.</strong><br><br><em style="font-size:.7rem;color:rgba(12,11,9,.3)">Federal estimate only. Does not include state taxes or net investment income tax on amounts below the NIIT threshold. Consult a tax advisor before acting.</em></div>'}
+    </div>
+  </div>`;
+}
+</script>
+<a id="finra-pill" href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer" aria-label="FINRA BrokerCheck">
+  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5Z"/></svg>
+  FINRA BrokerCheck
+</a>
+</body>
+</html>
