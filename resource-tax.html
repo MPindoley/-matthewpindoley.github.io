@@ -618,10 +618,21 @@ body.pressing #cur{width:20px;height:20px}
 }
 @media(max-width:768px){
   .nav-links,.nav-btn{display:none}.hbg{display:flex}
-  .hero-left{padding:9rem 1.5rem 4rem;justify-content:flex-start}
-  .hero-right{padding:4rem 1.5rem 5rem;display:none}
+
+  /* Stack hero panels vertically instead of hiding the right one */
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:9rem 1.5rem 3.5rem;justify-content:flex-start}
+  .hero-right{
+    display:flex;padding:3rem 1.5rem 4rem;
+    justify-content:flex-start;flex-direction:column;gap:2rem;
+  }
+  .hero-right::before{display:none}
+  .hero-num-wrap{display:none}
+  .hero-right-stat{font-size:clamp(3.5rem,18vw,6rem)}
+  .hero-right-note{max-width:100%;font-size:.8rem}
+
   .hero-h{font-size:clamp(4rem,22vw,11rem)}
-  .hero-actions{flex-wrap:wrap;gap:.75rem}
+  .hero-actions{flex-wrap:wrap;gap:.75rem;margin-bottom:1.5rem}
   .hero-actions a,.hero-actions .btn-p{width:100%;justify-content:center;text-align:center}
   .hero-meta{gap:2rem;flex-wrap:wrap}
   .strat-intro-left,.strat-intro-right{padding:3.5rem 1.5rem}
