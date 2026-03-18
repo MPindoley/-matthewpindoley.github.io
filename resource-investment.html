@@ -35,10 +35,10 @@ a{color:inherit;text-decoration:none}
 
 /* CURSOR */
 #cur{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;
-  background:var(--silver);pointer-events:none;z-index:10000;
-  transform:translate(-50%,-50%);transition:width .3s var(--e1),height .3s var(--e1),background .3s}
+  background:var(--accent);pointer-events:none;z-index:10000;
+  transform:translate(-50%,-50%);transition:width .3s var(--e1),height .3s var(--e1)}
 #cur-r{position:fixed;top:0;left:0;width:38px;height:38px;border-radius:50%;
-  border:1px solid rgba(124,156,186,.35);pointer-events:none;z-index:9999;
+  border:1px solid rgba(124,156,186,.55);pointer-events:none;z-index:9999;
   transform:translate(-50%,-50%);
   transition:width .35s var(--e1),height .35s var(--e1),border-color .3s}
 body.hov #cur{width:48px;height:48px;opacity:.1}
@@ -107,8 +107,8 @@ body.pressing #cur{width:22px;height:22px}
 .nav-btn:hover::before{transform:scaleX(1)}
 .nav-btn:hover{color:var(--ink);border-color:var(--accent)}
 .nav-btn span{position:relative;z-index:1}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:none;padding:6px}
-.hbg i{display:block;width:22px;height:1px;background:var(--silver);transition:all .3s}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:none;padding:7px 9px;border-radius:6px;background:rgba(10,13,20,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(124,156,186,.2)}
+.hbg i{display:block;width:22px;height:2px;background:var(--accent);border-radius:2px;transition:all .3s}
 
 /* MOBILE DRAWER */
 #mob{position:fixed;inset:0;z-index:850;background:var(--ink2);
@@ -899,7 +899,7 @@ footer{
   <div class="cta-right rv">
     <div class="cta-dets">
       <div><div class="cta-dl">Phone</div><div class="cta-dv"><a href="tel:+14198871002">(419) 887-1002</a></div></div>
-      <div><div class="cta-dl">Email</div><div class="cta-dv"><a href="mailto:Matthew.Pindoley@osaicwealth.com">Matthew.Pindoley@osaicwealth.com</a></div></div>
+      <div><div class="cta-dl">Email</div><div class="cta-dv"><a href="/cdn-cgi/l/email-protection#87cae6f3f3efe2f0a9d7eee9e3e8ebe2fec7e8f4e6eee4f0e2e6ebf3efa9e4e8ea"><span class="__cf_email__" data-cfemail="d895b9acacb0bdaff688b1b6bcb7b4bda198b7abb9b1bbafbdb9b4acb0f6bbb7b5">[email&#160;protected]</span></a></div></div>
       <div><div class="cta-dl">Consultations</div><div class="cta-dv">Complimentary, no pressure</div></div>
       <div><div class="cta-dl">Availability</div><div class="cta-dv">Mon – Fri, 9am – 5pm</div></div>
     </div>
@@ -1161,7 +1161,7 @@ footer{
   </div><!-- /sb-body -->
 </div><!-- /sb-panel -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ─── CURSOR ─────────────────────────────────────────── */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
 let mx=0,my=0,rx=0,ry=0;
@@ -1339,10 +1339,12 @@ function runAllocation(){
 
   if(issues.length){html+=`<div style="margin-bottom:.5rem"><strong style="font-size:.75rem">Items to review:</strong><ul style="margin:.4rem 0 0 1rem;display:flex;flex-direction:column;gap:.3rem">`+issues.map(i=>`<li style="font-size:.75rem">${i}</li>`).join('')+'</ul></div>'}
   if(notes.length){html+=`<div><strong style="font-size:.75rem">Observations:</strong><ul style="margin:.4rem 0 0 1rem;display:flex;flex-direction:column;gap:.3rem">`+notes.map(n=>`<li style="font-size:.75rem">${n}</li>`).join('')+'</ul></div>'}
-  if(issues.length===0&&notes.length===0) html+='<div style="font-size:.78rem">✓ Allocation appears well-structured for your selected risk profile. Review annually or after major life events.</div>';
-
+  if(issues.length===0&&notes.length===0){
+    html+='<div style="font-size:.75rem;color:rgba(10,13,20,.45);line-height:1.6">Your allocation looks well-structured for a <strong>'+riskLabel+'</strong> profile. Continue monitoring drift and rebalance when any asset class moves more than 5% from target.</div>';
+  }
   html+='</div>';
-  document.getElementById('alloc-result').innerHTML=html;
+  r.innerHTML=html;
 }
 </script>
-<a href
+</body>
+</html>
